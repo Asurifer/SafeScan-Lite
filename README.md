@@ -1,8 +1,6 @@
-SafeScan Lite 精简版 README.md
-
 # SafeScan Lite
 
-轻量级网络安全扫描工具，专为网安学习者设计，整合端口扫描、弱口令检测、简易漏洞指纹匹配三大核心功能，基于Python开发，易上手、可扩展，适合作为网安方向开源入门项目。
+轻量级网络安全扫描工具，专为网安学习者设计，整合端口扫描、弱口令检测、简易漏洞指纹匹配三大核心功能，基于Python开发，后续可扩展更多功能。
 
 🔧 环境要求与配置
 
@@ -10,7 +8,7 @@ SafeScan Lite 精简版 README.md
 
 - 操作系统：Windows 10/11、Ubuntu 20.04+、macOS
 
-- Python 版本：3.9+（推荐3.9.13）
+- Python 版本：3.9+
 
 - 第三方依赖：paramiko==2.12.0
 
@@ -51,4 +49,4 @@ vuln_fingerprint.json # 漏洞指纹库（可扩展）
 
 🤝 贡献与联系
 
-欢迎提交Issue、Pull Request完善项目；联系作者：[替换为你的GitHub仓库/邮箱]
+欢迎提交Issue、Pull Request完善项目；
