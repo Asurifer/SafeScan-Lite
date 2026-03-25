@@ -1,41 +1,46 @@
-# SafeScan Lite
+#  SafeScan Lite 
 
-轻量级网络安全扫描工具，专为网安学习者设计，整合端口扫描、弱口令检测、简易漏洞指纹匹配三大核心功能，基于Python开发，后续可扩展更多功能。
+**SafeScan Lite** 是一款专为网络安全初学者设计的轻量级集成化扫描工具。本项目通过模块化设计，实现了从资产侦察、弱口令探测到漏洞识别的完整流程，并支持自动生成 HTML 可视化分析报告。
 
-环境要求与配置
+---
 
-基础环境
+##  核心功能
 
-- 操作系统：Windows 10/11、Ubuntu 20.04+、macOS
+| 功能模块 | 说明 |
+| :--- | :--- | :--- |
+| ** 端口扫描** | 探测目标主机 1-1000 常用端口开放情况 |
+| ** 弱口令检测** | 针对 SSH/SMB 等开放服务进行字典爆破 | 
+| ** 指纹匹配** | 自动化关联已知漏洞库 (JSON 驱动) | 
+| ** 目录爆破** | 自动化探测 Web 备份、后台及敏感路径 |
+| ** 可视化报告** | 一键生成 HTML 格式的专业扫描报告 | 
 
-- Python 版本：3.9+
+---
 
-- 第三方依赖：paramiko==2.12.0
+##  环境要求与配置
 
-快速配置
+### 1. 基础环境
+- **操作系统**：Windows 10/11、Ubuntu 20.04+、macOS
+- **Python 版本**：3.9 及以上版本
 
-# 安装依赖（Windows/Ubuntu/macOS通用，Ubuntu/macOS替换pip为pip3）
-pip install paramiko==2.12.0
+### 2. 安装依赖
+项目新增了 Web 请求处理逻辑，请执行以下命令安装必要依赖：
+```bash
+pip install paramiko==2.12.0 requests
 
-快速开始
+SafeScan_Lite/
+├── safescan_lite.py       # 项目主程序入口
+├── port_scanner.py        # 端口扫描核心逻辑
+├── password_cracker.py    # 弱口令检测逻辑
+├── dir_scanner.py         # [新增] 敏感目录扫描模块
+├── reporter.py            # [新增] HTML 报告生成引擎
+├── vuln_fingerprint.json  # 漏洞规则数据库
+├── username.txt           # 用户名字典
+├── password.txt           # 密码字典
+└── dicts/                 # 字典文件夹
+    └── dirs.txt           # Web 路径爆破字典
 
-1. 将项目所有文件（port_scanner.py、password_cracker.py、safescan_lite.py、username.txt、password.txt、vuln_fingerprint.json）放入同一目录。
-
-2. 终端进入项目目录，执行命令：
-        # Windows
+# 在项目根目录下执行
 python safescan_lite.py
-# Ubuntu/macOS
-python3.9 safescan_lite.py
-
-3. 输入目标IP（如127.0.0.1），等待扫描完成，查看终端输出的扫描报告。
-
-核心文件说明
-
-port_scanner.py       # 端口扫描模块
-password_cracker.py   # 弱口令检测模块
-safescan_lite.py      # 项目主程序（整合+报告生成）
-username.txt/password.txt # 弱口令字典（可自定义）
-vuln_fingerprint.json # 漏洞指纹库（可扩展）
 
 注意事项
 
