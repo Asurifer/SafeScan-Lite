@@ -1,7 +1,0 @@
-admin/
-login.php
-config.php
-.git/
-robots.txt
-backup.zip
-index.php.bak
