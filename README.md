@@ -41,7 +41,7 @@ SafeScan_Lite/
 
 # 在项目根目录下执行
 python safescan_lite.py
-
+```
 ---
 
 ##  注意事项
